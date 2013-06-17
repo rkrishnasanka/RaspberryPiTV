@@ -58,9 +58,10 @@
 		
 	  	//var socket = io.connect('http://192.168.0.102:8080');
 		
+		var url =  String(window.location.protocol+"//"+ window.location.hostname);
+		var socket = io.connect(url);
 		
-		var socket = io.connect(window.location.protocol+"://"+window.location.host); 
-	  //var socket = io.connect('http://raspberrypi.local:8080/');
+		//var socket = io.connect('http://raspberrypi.local:8080/');
 	    socket.on('connect', function(data){
 	  	socket.emit('remote');
 	  	
